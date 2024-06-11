@@ -2,7 +2,7 @@ class Solution {
     public char nextGreatestLetter(char[] l, char target) {
        char c='0';
         for(int i=0; i<l.length;i++){
-            if((int)l[i]> (int)target){
+            if(l[i]>target){
                  c= l[i];
                 break;
             }
