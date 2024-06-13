@@ -18,30 +18,30 @@ class Solution {
       
     public List<String> binaryTreePaths(TreeNode root) {
         ArrayList<String> li = new ArrayList<>();
-        StringBuilder sb = new StringBuilder();
-        path(li,root,sb);
+ 
+        path(li,root,"");
         return li;
     }
       
- public void path(List<String>li,TreeNode root, StringBuilder sb) {
-     int temp = sb.length();
+ public void path(List<String>li,TreeNode root, String str) {
+    
         if(root.left==null && root.right==null){
-            sb.append(root.val);
-            li.add(sb.toString());
+           str+=root.val;
+            li.add(str);
            
            
         }
         else{
-            sb.append(root.val);
-            sb.append("->");
+            str+=root.val;
+            str+="->";
             if(root.left!=null){
-                path(li,root.left,sb);
+                path(li,root.left,str);
             }
             if(root.right!=null){
-              path(li,root.right,sb); 
+              path(li,root.right,str); 
             }
         }
-      sb.setLength(sb.length()-(sb.length()-temp));
+     
        
     }
 }
