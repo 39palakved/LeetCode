@@ -21,7 +21,7 @@ class Solution {
         }
       
         int x = solve(root);
-        return res-1;
+        return res;
     }
     public int solve(TreeNode root){
         if(root==null){
@@ -30,7 +30,7 @@ class Solution {
         int l = solve(root.left);
         int r= solve(root.right);
        int height = Math.max(l,r)+1;
-       res= Math.max(res,l+r+1);
+       res= Math.max(res,l+r);
         return height;
     }
 }
