@@ -14,13 +14,13 @@ class Solution {
                 if(map.size()==1){
                     continue;
                 }
-                else{
+                
                 for(char key:map.keySet()){
                     min= Math.min(min,map.get(key));
                     max = Math.max(max,map.get(key));
                 }
                     sum+=(max-min);
-                }
+                
                 
               
                 
