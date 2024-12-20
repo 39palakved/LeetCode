@@ -1,16 +1,17 @@
 class Solution {
     public boolean isPalindrome(String s) {
-       String str = s.toLowerCase();
+       s =  s.toLowerCase();
+        StringBuilder sb1 = new StringBuilder();
         StringBuilder sb = new StringBuilder();
-        for(int i=0; i<str.length();i++){
-            if(Character.isLetterOrDigit(str.charAt(i))){
-                sb.append(str.charAt(i));
-            }
+        for(char c:s.toCharArray()){
+           if(Character.isLetterOrDigit(c)){
+              sb.append(c);
+              sb1.append(c);
+           }
         }
-        String st= sb.toString();
-        if(sb.reverse().toString().equals(st)){
+         if(sb1.toString().equals(sb.reverse().toString())){
             return true;
-        }
-        return false;
+         }
+         return false;
     }
 }
